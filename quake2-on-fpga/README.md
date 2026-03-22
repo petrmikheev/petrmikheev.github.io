@@ -45,7 +45,7 @@ The article turned out to be quite long, so I split it into several parts.
 
 <img width=300 src="https://raw.githubusercontent.com/petrmikheev/endeavour/refs/heads/master/images/hardware/rev2_front.jpg">
 
-## Part 4/6: Next generation
+## Part 4/6: [Next generation](part4.md)
 
 <img width=300 src="https://raw.githubusercontent.com/petrmikheev/endeavour2/refs/heads/master/doc/images/board_2a.jpg">
 
