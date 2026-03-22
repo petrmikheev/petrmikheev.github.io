@@ -1,5 +1,7 @@
 # My DIY FPGA board can run Quake II (part 4)
 
+*22-mar-2026*
+
 - Part 1/6: [Introduction](README.md)
 - Part 2/6: [First prototype](part2.md)
 - Part 3/6: [Now it mostly works](part3.md)
@@ -13,14 +15,14 @@ I didn't want to simply recreate what I had before. Making something more advanc
 
 Specifically, I wanted a more advanced FPGA -- I chose the Efinix Ti60F256 -- and more modern memory -- IM8G16D3FFBG, which is a 1GB DDR3L chip. The first has 256 pins and the second has 96, both with a 0.8 mm pitch.
 
-<img width=400 src="https://habrastorage.org/r/w1560/webt/1i/b0/id/1ib0idvz_tetj0cbr9mxhurmqjg.png">
+<img width=400 src="https://habrastorage.org/r/w1560/webt/1i/b0/id/1ib0idvz_tetj0cbr9mxhurmqjg.png">  
 *Some IC in BGA-256 package. Not Ti60 though, but looks very similar.*
 
 After the struggles with DDR1, I had absolutely no desire to reinvent the memory controller. Fortunately, I found something with the promising name "DDR3 Soft Controller Core" on the Efinix website. On their community forum, I was also pointed to a guide on DDR3 PCB layout recommendations.
 
 There were new unfamiliar terms, so I had to spend more time diving into the theory.
 
-<img width=600 src="images/ddr3_skew.png">
+<img width=600 src="images/ddr3_skew.png">  
 
 I barely managed to meet the trace length matching requirements. The recommendations also suggested routing all address and command lines on a single layer, but that seemed impossible. Instead, I tried to account for the difference in signal propagation speeds across different layers and compensated by shortening the traces on the internal layer.
 

@@ -1,5 +1,7 @@
 # My DIY FPGA board can run Quake II
 
+*22-mar-2026*
+
 <img width=800 src="https://raw.githubusercontent.com/petrmikheev/endeavour2/refs/heads/master/doc/images/bios.jpg">
 
 Most people start their journey into custom CPU design by buying an off-the-shelf [FPGA](https://en.wikipedia.org/wiki/Field-programmable_gate_array) dev board. I decided to take the long way around: instead of just writing Verilog code, I started with buying a soldering iron.
