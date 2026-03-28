@@ -1,6 +1,6 @@
 # My DIY FPGA board can run Quake II (part 2)
 
-*22-mar-2026*
+*22-Mar-2026*
 
 <img width=800 src="images/part2_header.jpg">
 
@@ -33,7 +33,7 @@ The problem is that almost all "serious" high-performance chips only come in BGA
 
 <img width=800 src="https://habrastorage.org/r/w1560/getpro/habr//post_images/a48/d0f/458/a48d0f458c742dd321db3bf2ff3f623a.jpg">
 
-Avoiding BGA packages narrowed my choices significantly. The largest non-BGA FPGAs I could find were the Altera MAX10 (10M50SAE144 and 10M50SCE144) with 50K logic cells. I settled on the 10M50SAE144C8G and bought two -- I already suspected that I will not succeed from the first attempt.
+Avoiding BGA packages narrowed my choices significantly. The largest non-BGA FPGAs I could find were the Altera MAX10 (10M50SAE144 and 10M50SCE144) with 50K logic cells. I settled on the 10M50SAE144C8G and bought two --- I already suspected that I will not succeed from the first attempt.
 
 To reach my goal of "building a computer" I needed RAM, storage, and interfaces for a screen and keyboard.
 
@@ -42,7 +42,7 @@ To reach my goal of "building a computer" I needed RAM, storage, and interfaces 
 - Storage: Found a [SD card connection scheme](https://www.fpga4fun.com/SD1.html) on fpga4fun.com. It looked straightforward enough, so I just reserved 6 IO pins for this and continued to other interfaces.
 - Memory: Since there is a plan to run Linux, the more RAM the better. The largest non-BGA memory chip I found was 128 MB DDR1 in a TSOP66 package. Then I spent days drowning in datasheets, encountering terms like SSTL2, reference voltage, and termination classes. The meaning of "impedance" at those point remained a mystery to me. Finally I decided to parallel four DDR1 chips on the same address and data lines, using Chip Select to toggle between them. Of course traces on PCB became very long and messy, but I thought if it didn't work at top speed, I'd just lower the frequency. What I didn’t realize then was that DDR1 has also a minimum allowed frequency.
 
-I threw in some LEDs, buttons, an I2C DAC with an amplifier for sound, and an Ethernet port (which I never actually used -- I had enough problems without it).
+I threw in some LEDs, buttons, an I2C DAC with an amplifier for sound, and an Ethernet port (which I never actually used --- I had enough problems without it).
 
 I heard that for power stability there should be capacitors between VCC and GND, so I added a couple. (Spoiler: I should have researched this topic more. My board would later reboot itself whenever I plugged or unplugged a USB device).
 
@@ -91,7 +91,7 @@ The next self-inflicted problem turned out to be the AP2114H 2.5V linear regulat
 
 My second attempt at soldering the FPGA went much better. At the very least, the power rails weren't shorted to ground. After a full day of meticulously poking each of the 144 pins with a multimeter and a soldering iron back and forth, the chip finally started responding to the programmer via JTAG.
 
-And then -- after fixing yet another floating pin -- I finally managed to make an LED blink.
+And then --- after fixing yet another floating pin --- I finally managed to make an LED blink.
 
 <img width=800 src="images/soldering5.jpeg">
 *Looking at the damaged trace on the PCB after two attempts to solder an HDMI connector.*
@@ -139,6 +139,6 @@ However, I finally got a win: SD card reading actually worked! It took a couple 
 - **Display connection:** No signal on the HDMI.
 - **DDR1 RAM:** A complete failure on this revision.
 
-Audio didn't work right away either, but I didn't spend much time on it -- I was already eager to start the second prototype using everything I'd learned. I also pushed the USB 1.1 implementation to a future phase.
+Audio didn't work right away either, but I didn't spend much time on it --- I was already eager to start the second prototype using everything I'd learned. I also pushed the USB 1.1 implementation to a future phase.
 
 Next part: [Now it mostly works (3/6)](part3.md)

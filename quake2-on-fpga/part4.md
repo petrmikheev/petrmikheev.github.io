@@ -1,6 +1,6 @@
 # My DIY FPGA board can run Quake II (part 4)
 
-*22-mar-2026*
+*22-Mar-2026*
 
 - Part 1/6: [Introduction](README.md)
 - Part 2/6: [First prototype](part2.md)
@@ -56,7 +56,7 @@ Soldering new chips onto new devices is much easier. First, apply solder paste t
 
 To apply the solder paste neatly, a stencil is needed. My stencil (ordered along with the board) has width exactly matching the size of the PCB. This is quite important, as it makes it easier to align with the board. I used a duct tape to secure the stencil and a plastic card to spread the paste.
 
-I bought a bottom heater with adjustable temperature, listed on the store's website as a "Uyue 946 Constant Temperature Heating Station Screen Removal tool". Before getting down to business, I practiced (I have plenty of spare PCBs) on several cheaper memory chips bought specifically for this purpose. I heated a test sample to 221°C and watched as the solder paste changed color and formed into balls.
+I bought a bottom heater with adjustable temperature, listed on the store's website as a "Uyue 946 Constant Temperature Heating Station Screen Removal tool". Before getting down to business, I practiced (I have plenty of spare PCBs) on several cheaper memory chips bought specifically for this purpose. I heated a test sample to 221°C and watched the solder paste change color and form into balls.
 
 <img width=800 src="images/bottom_heater.jpeg">  
 *Bottom heater*
@@ -66,7 +66,7 @@ I examined the resulting balls on the FPGA footprint. No defects were visible, s
 <img width=800 src="images/bga_test_run.jpeg">  
 *Test run*
 
-With a bottom heater, you can only solder the components on the top side of the board. Then, dozens of capacitors and resistors need to be added to the bottom without damaging anything on top. I decided to solder the bottom side with a heat gun and, just in case, used solder paste with a lower melting point (183°C).
+With a bottom heater, one can only solder the components on the top side of the board. Then, dozens of capacitors and resistors need to be added to the bottom without damaging anything on the other side. I decided to solder the bottom side with a heat gun and, just in case, used solder paste with a lower melting point (183°C).
 
 Surprisingly, everything worked on the first try. The first try took three days: soldering the top side, the bottom side, and then the connectors separately. There were no significant issues. In a couple of places adjacent pins bridged (luckily not under the BGA chips), but I managed to separate them.
 
@@ -76,7 +76,7 @@ Well, "everything worked" is a bit of an exaggeration. After a few months of wri
 
 ## System on Chip
 
-> A System on a Chip (SoC) is an integrated circuit that consolidates all essential computer components -- including the CPU, memory, graphics (GPU), and I/O interfaces -- onto a single chip.
+> A System on a Chip (SoC) is an integrated circuit that consolidates all essential computer components --- including the CPU, memory, graphics (GPU), and I/O interfaces --- onto a single chip.
 
 The term "FPGA" stands for "field-programmable gate array" meaning the chip can be programmed to perform any custom digital logic. This custom digital logic (which in my case is a complete SoC) must be defined using a hardware description language (HDL). The most common HDLs are Verilog and VHDL. HDL code essentially describes how logic elements, such as AND, OR, and NOT, should be connected to each other.
 
@@ -90,7 +90,7 @@ The most complicated part of a SoC is, of course, the processor core. And I didn
 
 I used the following IP cores:
 
-- [VexiiRiscv](https://github.com/SpinalHDL/VexiiRiscv/) -- RISC-V core written in SpinalHDL.
+- [VexiiRiscv](https://github.com/SpinalHDL/VexiiRiscv/) --- RISC-V core written in SpinalHDL.
 - A few components distributed with [SpinalHDL](https://github.com/SpinalHDL/SpinalHDL) including Tilelink interconnect, APB3 bridge, USB OHCI controller, PLIC.
 - [ZipCPU/sdspi SD-Card controller](https://github.com/ZipCPU/sdspi).
 - [Efinix DDR3 Soft Controller Core](https://www.efinixinc.com/support/ip/ddr3-controller.php) (source not available, can be used only with Efinix FPGAs).
@@ -101,7 +101,7 @@ When I started my project, I preferred Verilog and only used SpinalHDL to genera
 
 The learning curve was not easy though.
 SpinalHDL is a set of libraries that generate Verilog/VHDL code from Scala.
-It becomes quite tricky when hardware abstractions (pipelines, finite-state-maschines, busses, caches -- CPU is not a simple thing) and generation-time stuff (coroutines, delayed instantiation, inheritance, plugins) are mixed in a single file.
+It becomes quite tricky when hardware abstractions (pipelines, finite-state-maschines, busses, caches --- CPU is not a simple thing) and generation-time stuff (coroutines, delayed instantiation, inheritance, plugins) are mixed in a single file.
 
 Also I was new to Scala and often couldn't tell if a sequence of characters was a variable name or something defined deep within SpinalHDL's internals or just standard Scala syntax (I remember googling what `"???"` means in Scala; Google ignored the question marks assuming that I just ask with a lot of expression).
 
@@ -116,7 +116,7 @@ Fortunately Dolu1990 was always ready to answer questions (Dolu1990, if you read
 - FPGA utilization: 53612/60800 XLRs (89%), 241/256 memory blocks (95%).
 - Single riscv32 core (two cores could fit into design only if I sacrifice FPU) working at 207 MHz.
 - Dhrystone benchmark: 511 DMIPS (2.46 DMIPS/MHz). It is more than Pentium, but a bit less than Pentium II.
-- 1 GB RAM -- more than an average Pentium II PC could hope for.
+- 1 GB RAM --- more than an average Pentium II PC could hope for.
 - Floating-point benchmark: peak 207 MFLOPS (or 117 MFLOPS on a more realistic [benchmark](https://github.com/petrmikheev/endeavour2/blob/master/software/bios/bench_impl.c#L145)).
 - Coremark 1.0: 783.08.
 - SD card read: 45.06 MB/s.
@@ -143,4 +143,4 @@ I'll say more about DMA when I get to optimizing Quake II. I wanted to implement
 
 More pictures in the next part.
 
-Next part: coming soon
+Next part: [One more iteration (5/6)](part5.md)

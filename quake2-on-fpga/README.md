@@ -1,14 +1,21 @@
 # My DIY FPGA board can run Quake II
 
-*22-mar-2026*
+*22-Mar-2026*
 
 <img width=800 src="https://raw.githubusercontent.com/petrmikheev/endeavour2/refs/heads/master/doc/images/bios.jpg">
+
+- Part 1/6: [Introduction](README.md) (you are here)
+- Part 2/6: [First prototype](part2.md)
+- Part 3/6: [Now it mostly works](part3.md)
+- Part 4/6: [Next generation](part4.md)
+- Part 5/6: [One more iteration](part5.md)
+- Part 6/6: [Optimizing hardware to run Quake II](part6.md)
 
 Most people start their journey into custom CPU design by buying an off-the-shelf [FPGA](https://en.wikipedia.org/wiki/Field-programmable_gate_array) dev board. I decided to take the long way around: instead of just writing Verilog code, I started with buying a soldering iron.
 
 This is the story of how I dived into electronics design with almost zero prior experience. My goal was ambitious: build an FPGA-based device capable of booting Linux, connecting to a screen and keyboard, and allowing me to write and compile code directly on the machine itself.
 
-Why do this? It has no practical value -- CPUs in FPGA are always more expensive and less performant than actual CPU chips. But it is a hobby. My idea of having fun.
+Why do this? It has no practical value --- CPUs in FPGA are always more expensive and less performant than actual CPU chips. But it is a hobby. My idea of having fun.
 
 After two years of work, the results have far exceeded my own expectations. What I ended up with is a functional computer that is more than capable of running Quake II.
 
@@ -51,11 +58,11 @@ The article turned out to be quite long, so I split it into several parts.
 
 <img width=300 src="https://raw.githubusercontent.com/petrmikheev/endeavour2/refs/heads/master/doc/images/board_2a.jpg">
 
-## Part 5/6: One more iteration
+## Part 5/6: [One more iteration](part5.md)
 
 <img width=300 src="https://raw.githubusercontent.com/petrmikheev/endeavour2/refs/heads/master/doc/images/case.jpg">
 
-## Part 6/6: Optimizing hardware to run Quake II
+## Part 6/6: [Optimizing hardware to run Quake II](part6.md)
 
 <img width=300 src="https://raw.githubusercontent.com/petrmikheev/endeavour2/refs/heads/master/doc/images/quake2.jpg">
 

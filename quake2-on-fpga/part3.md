@@ -1,6 +1,6 @@
 # My DIY FPGA board can run Quake II (part 3)
 
-*22-mar-2026*
+*22-Mar-2026*
 
 - Part 1/6: [Introduction](README.md)
 - Part 2/6: [First prototype](part2.md)
